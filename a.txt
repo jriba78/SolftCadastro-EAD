@@ -1,3 +1,2 @@
 teste
 Entendendo o HEAD
-arquivo modificado no ramo teste
