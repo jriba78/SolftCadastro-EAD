@@ -1,22 +1,22 @@
-<?php
-    include_once("conexao.php");
+ <?php
+  session_start();
 
-    $nome = filter_input(INPUT_POST, 'nome');
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+  include_once("conexao.php");
 
-    $result_usuario = "INSERT INTO usuarios (nome, email, created) VALUES ('$nome', '$email', NOW())";
-    $resultado_usuario = mysqli_query($mysqli, $result_usuario);
-?>
+  $nome = filter_input(INPUT_POST, 'nome',);
+  $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+ 
+  // echo "Nome: $nome <br>";
+   // echo "E-mail: $email <br>";
+  $result_usuario = "INSERT INTO usuarios (nome, email, created) VALUES ('$nome', '$email', NOW())";
+  $resultado_usuario = mysqli_query($conn, $result_usuario);
+ 
+  if (mysqli_insert_id($conn)){
+  $_SESSION['msg'] = "usuario cadastrado com sucesso";
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <link href="style/style.css" rel="stylesheet" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel</title>
-</head>
-<body>
-    <h1>Cliente Cadastrado com sucesso!</h1>
-</body>
-</html>
+    header("Location: index.php");
+
+  } else {
+    header("Location: index.php");
+  }
+  ?>
