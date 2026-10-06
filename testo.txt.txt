@@ -1,0 +1,2 @@
+
+Esse projeto tem por objetivo demostrar os passos para executat um commit no repositorios git e github
