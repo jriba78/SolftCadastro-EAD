@@ -1,0 +1,1 @@
+Esse arquivo tem por objetivo descrever as configuracoes do projeto.
